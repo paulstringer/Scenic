@@ -12,14 +12,14 @@ struct StoryboardSegueHandler {
 }
 
 protocol StoryboardVisitableScene {
-  func accept(visitor: MainStoryboardSceneVisitor)
+  func accept(visitor: StoryboardSceneVisitor)
 }
 
 protocol StoryboardManagedScene {
   var storyboardSegueHandler: StoryboardSegueHandler! { get set }
 }
 
-struct StoryboardController {
+struct StoryboardController: StoryboardSceneVisitor {
   
   let segue: UIStoryboardSegue
   let sender: Any?
@@ -42,4 +42,9 @@ struct StoryboardController {
   
 }
 
+protocol StoryboardSceneVisitor {
+  
+  // methods that prepare each scene:
+  
+}
 
