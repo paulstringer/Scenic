@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Scenic_Example' do
+  pod 'Scenic', :path => '../'
+
+  target 'Scenic_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
